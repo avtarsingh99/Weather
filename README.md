@@ -1,7 +1,5 @@
 # Weather App
 
-Project live link : https://avtarsingh99.github.io/Weather/
-
 This project can be used to find weather conditions of any particular area. This site covers almost every city.
 
 Features: 
