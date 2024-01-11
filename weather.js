@@ -22,7 +22,7 @@ const getWeather = (city) => {
       max_temp.innerHTML = response.max_temp;
       wind_speed.innerHTML = response.wind_speed;
       wind_degrees.innerHTML = response.wind_degrees;
-      sunrise.innerHTML = new Date(response.sunrise * 1000).toLocaleTimeString();
+      sunrise.innerHTML = response.sunrise;
       sunset.innerHTML = response.sunset;
     })
     .catch((err) => console.error(err));
@@ -62,7 +62,7 @@ fetch(
     max_temp2.innerHTML = response.max_temp2;
     wind_speed2.innerHTML = response.wind_speed2;
     wind_degrees2.innerHTML = response.wind_degrees2;
-    sunrise2.innerHTML = response.sunrise2;
+    sunrise2.innerHTML = new Date(response.sunrise2 * 1000).toLocaleTimeString();
     sunset2.innerHTML = response.sunset2;
   })
   .catch((err) => console.error(err));
