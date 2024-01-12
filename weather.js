@@ -5,6 +5,16 @@ const options = {
     "X-RapidAPI-Host": "weather-by-api-ninjas.p.rapidapi.com",
   },
 };
+
+const formatTime = (timestamp) => {
+  const date = new Date(timestamp * 1000); // Convert Unix timestamp to milliseconds
+  const hours = date.getHours().toString().padStart(2, '0');
+  const minutes = date.getMinutes().toString().padStart(2, '0');
+  const seconds = date.getSeconds().toString().padStart(2, '0');
+  return `${hours}:${minutes}:${seconds}`;
+};
+
+
 const getWeather = (city) => {
     cityName.innerHTML = city
   fetch(
@@ -22,8 +32,8 @@ const getWeather = (city) => {
       max_temp.innerHTML = response.max_temp;
       wind_speed.innerHTML = response.wind_speed;
       wind_degrees.innerHTML = response.wind_degrees;
-      sunrise.innerHTML = response.sunrise;
-      sunset.innerHTML = response.sunset;
+      sunrise.innerHTML = formatTime(response.sunrise);
+      sunset.innerHTML = formatTime(response.sunset);
     })
     .catch((err) => console.error(err));
 };
