@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather app</title>
+    <link href="./output.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-100">
+    <nav class="bg-gray-900 shadow py-4">
+      <div class="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between">
+        <a class="text-4xl text-shadow shadow-white text-white font-bold mb-4 sm:mb-0" href="#">Weather App</a>
+        <div class="flex items-center w-full sm:w-auto">
+          <div class="flex rounded-md shadow-sm w-full">
+            <input class="rounded-l-md sm:text-sm border-gray-300 px-4 py-2 w-full" type="search" placeholder="Enter city here" aria-label="Search" id="city" />
+            <button class="px-6 py-2 rounded-r-md bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300" type="submit" id="submit">Search</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold text-center mb-6">Weather for <span id="cityName"></span></h1>
+      <main>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          <div class="bg-white rounded-lg shadow-lg shadow-blue-500/50 overflow-hidden">
+            <div class="bg-blue-500 text-white px-6 py-4">
+              <h2 class="text-xl font-semibold">Temperature</h2>
+            </div>
+            <div class="px-6 py-4">
+              <ul>
+                <li class="mb-2 font-mono">Temperature : <span id="temp"></span><span>&#8451</span></li>
+                <li class="mb-2 font-mono">Min temperature : <span id="min_temp"></span><span>&#8451</span></li>
+                <li class="mb-2 font-mono">Max temperature : <span id="max_temp"></span><span>&#8451</span></li>
+              </ul>
+              <button class="bg-blue-500 text-white px-4 py-2 rounded-md w-full mt-4">Keep city clean & green.</button>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg shadow-green-500/50 overflow-hidden">
+            <div class="bg-green-500 text-white px-6 py-4">
+              <h2 class="text-xl font-semibold">Sun & Windspeed</h2>
+            </div>
+            <div class="px-6 py-4">
+              <ul>
+                <li class="mb-2 font-mono">Wind Speed : <span id="wind_speed"></span><span> Km/hr</span></li>
+                <li class="mb-2 font-mono">Wind degrees : <span id="wind_degrees"></span><span>&#176</span></li>
+                <li class="mb-2 font-mono">Sunrise : <span id="sunrise"></span></li>
+                <li class="mb-2 font-mono">Sunset : <span id="sunset"></span></li>
+              </ul>
+              <button class="bg-green-500 text-white px-4 py-2 rounded-md w-full mt-4">Save water, save life.</button>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg shadow-purple-500/50 overflow-hidden">
+            <div class="bg-purple-500 text-white px-6 py-4">
+              <h2 class="text-xl font-semibold">Humidity</h2>
+            </div>
+            <div class="px-6 py-4">
+              <ul>
+                <li class="mb-2 font-mono">Humidity : <span id="humidity"></span><span> % </span></li>
+                <li class="mb-2 font-mono">Feels like : <span id="feels_like"></span><span>&#8451</span></li>
+                <li class="mb-2 font-mono">Cloud Precipitation : <span id="cloud_pct"></span><span> % </span></li>
+              </ul>
+              <button class="bg-purple-500 text-white px-4 py-2 rounded-md w-full mt-4">Plants more trees.</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="text-center">Made by Avtar  |   Connect me on
+        <div class="flex justify-center items-center mt-4 gap-4">
+          <img
+            src="../assets/linkedin.png"
+            alt="My LinkedIn profile"
+            class="max-h-11 cursor-pointer"
+            onclick="location.href='https://www.linkedin.com/in/avtar-singh-73a888235/'"
+          />
+          <img
+            src="../assets/github.png"
+            alt="My Github profile"
+            class="max-h-11 cursor-pointer"
+            onclick="location.href='https://github.com/avtarsingh99'"
+          />
+          <img
+            src="../assets/twitter.png"
+            alt="My twitter profile"
+            class="max-h-12 cursor-pointer"
+            onclick="location.href='https://twitter.com/worldofavtar'"
+          />
+          <img
+            src="../assets/behance.png"
+            alt="My behance profile"
+            class="max-h-11 cursor-pointer"
+            onclick="location.href='https://www.behance.net/worldofavtar'"
+          />
+        </div>
+      </footer>
+    </div>
+    <script src="weather.js"></script>
+  </body>
+</html>
