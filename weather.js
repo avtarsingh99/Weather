@@ -21,7 +21,7 @@ const getWeather = (city) => {
   )
     .then((response) => response.json())
     .then((response) => {
-      console.log(response, "Hello again !!");
+      console.log(response);
 
       // Use appropriate response data structure
       const current = response.current;
