@@ -21,13 +21,15 @@ const getWeather = (city) => {
   )
     .then((response) => response.json())
     .then((response) => {
-      console.log(response, "Hello firse");
+      console.log(response, "Hello again !!");
 
       // Use appropriate response data structure
       const current = response.current;
       cloud_pct.innerHTML = current.cloud;
       temp.innerHTML = current.temp_c;
       feels_like.innerHTML = current.feelslike_c;
+      min_temp.innerHTML = response.forecast.forecastday[0].day.mintemp_c;
+      max_temp.innerHTML = response.forecast.forecastday[0].day.maxtemp_c;
       humidity.innerHTML = current.humidity;
       wind_speed.innerHTML = current.wind_kph;
       wind_degrees.innerHTML = current.wind_degree;
