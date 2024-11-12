@@ -19,9 +19,9 @@ const getWeather = (city) => {
     "https://api.weatherapi.com/v1/forecast.json?key=eb995256b95a412f876152224241211&q=" + city + "&days=1",
     options
   )
-    // .then((response) => response.json())
+    .then((response) => response.json())
     .then((response) => {
-      console.log(response.current, "Hello again");
+      console.log(response, "Hello firse");
 
       // Use appropriate response data structure
       const current = response.current;
