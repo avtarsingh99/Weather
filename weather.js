@@ -16,7 +16,7 @@ const formatTime = (timestamp) => {
 const getWeather = (city) => {
   cityName.innerHTML = city;
   fetch(
-    "https://api.weatherapi.com/v1/current.json?key=eb995256b95a412f876152224241211&q=" + city + "&aqi=no",
+    "https://api.weatherapi.com/v1/forecast.json?key=eb995256b95a412f876152224241211&q=" + city + "&days=1",
     options
   )
     // .then((response) => response.json())
