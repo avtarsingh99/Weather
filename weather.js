@@ -2,7 +2,8 @@ const options = {
   method: "GET",
   headers: {
     "X-RapidAPI-Key": "eb995256b95a412f876152224241211",
-    "X-RapidAPI-Host": "weather-by-api-ninjas.p.rapidapi.com",
+    // "X-RapidAPI-Host": "weather-by-api-ninjas.p.rapidapi.com",
+     "X-RapidAPI-Host": "http://api.weatherapi.com/v1",
   },
 };
 
@@ -18,7 +19,7 @@ const formatTime = (timestamp) => {
 const getWeather = (city) => {
     cityName.innerHTML = city
   fetch( 
-"https://api.weatherapi.com/v1/current.json?key=eb995256b95a412f876152224241211&q=" + city + "&aqi=no", options
+"https://api.weatherapi.com/v1/current.json?key=eb995256b95a412f876152224241211&q=" + city + "&aqi=no", 
     // "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=" + city,
     options
   )
