@@ -19,7 +19,7 @@ const getWeather = (city) => {
     "https://api.weatherapi.com/v1/current.json?key=eb995256b95a412f876152224241211&q=" + city + "&aqi=no",
     options
   )
-    .then((response) => response.json())
+    // .then((response) => response.json())
     .then((response) => {
       console.log(response);
 
