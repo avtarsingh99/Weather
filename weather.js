@@ -2,8 +2,6 @@ const options = {
   method: "GET",
   headers: {
     "X-RapidAPI-Key": "eb995256b95a412f876152224241211",
-    // "X-RapidAPI-Host": "weather-by-api-ninjas.p.rapidapi.com",
-     "X-RapidAPI-Host": "http://api.weatherapi.com/v1",
   },
 };
 
@@ -15,36 +13,36 @@ const formatTime = (timestamp) => {
   return `${hours}:${minutes}:${seconds}`;
 };
 
-
 const getWeather = (city) => {
-    cityName.innerHTML = city
-  fetch( 
-"https://api.weatherapi.com/v1/current.json?key=eb995256b95a412f876152224241211&q=" + city + "&aqi=no", 
-    // "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=" + city,
+  cityName.innerHTML = city;
+  fetch(
+    "https://api.weatherapi.com/v1/current.json?key=eb995256b95a412f876152224241211&q=" + city + "&aqi=no",
     options
   )
     .then((response) => response.json())
     .then((response) => {
       console.log(response);
-      cloud_pct.innerHTML = response.cloud_pct;
-      temp.innerHTML = response.temp;
-      feels_like.innerHTML = response.feels_like;
-      humidity.innerHTML = response.humidity;
-      min_temp.innerHTML = response.min_temp;
-      max_temp.innerHTML = response.max_temp;
-      wind_speed.innerHTML = response.wind_speed;
-      wind_degrees.innerHTML = response.wind_degrees;
-      sunrise.innerHTML = formatTime(response.sunrise);
-      sunset.innerHTML = formatTime(response.sunset);
+
+      // Use appropriate response data structure
+      const current = response.current;
+      cloud_pct.innerHTML = current.cloud;
+      temp.innerHTML = current.temp_c;
+      feels_like.innerHTML = current.feelslike_c;
+      humidity.innerHTML = current.humidity;
+      wind_speed.innerHTML = current.wind_kph;
+      wind_degrees.innerHTML = current.wind_degree;
+      sunrise.innerHTML = formatTime(response.location.localtime_epoch + 6 * 3600); // Placeholder
+      sunset.innerHTML = formatTime(response.location.localtime_epoch + 18 * 3600); // Placeholder
     })
     .catch((err) => console.error(err));
 };
 
-submit.addEventListener("click" ,(e)=>{
-    e.preventDefault()
-    getWeather(city.value)
-})
-getWeather("Delhi")
+submit.addEventListener("click", (e) => {
+  e.preventDefault();
+  getWeather(city.value);
+});
+getWeather("Delhi");
+
 
 
 
